@@ -1,0 +1,53 @@
+===========================================
+Prerequisites:
+===========================================
+
+* Completed Exercise 3.
+
+
+===========================================
+Exercise 4: Zebras and Stuff...
+===========================================
+
+In this exercise we will:
+
+1. Now we can solve the real puzzle! See below for the puzzle text.
+2. Run the code for this exercise (ex.4). Make sure everything runs, and that the test fails.
+3. Add the missing statements (statements 2 to 7). You can choose if you want to use TTL or Java code.
+4. See if you can solve the puzzle? We have tests for that, remember? :)
+5. (Optional) To get to know Jena better you can start implementing the whole puzzle in Jena. 
+    A tip here would be to do that piece by piece - remove a statement in TTL, implement it in Jena, and see if everything still works. Repeat.  
+
+
+
+===========================================
+The puzzle
+===========================================
+
+According to Albert Einstein only 2 % of us are able to solve the Zebra Puzzle.
+
+Well, with a little help of OWL, it is not so difficult. Here it is:
+
+    1. There are five houses.
+    2. The Englishman lives in the red house.
+    3. The Spaniard owns the dog.
+    4. Coffee is drunk in the green house.
+    5. The Ukrainian drinks tea.
+    6. The green house is immediately to the right of the ivory house.
+    7. The Fuji owner owns snails.
+    8. The Giant owner lives in the yellow house.
+    9. Milk is drunk in the middle house.
+    10. The Norwegian lives in the first house.
+    11. The man who owns Kona lives in the house next to the man with the fox.
+    12. The Giant owner lives in a house next to the house where the horse is kept.
+    13. The Scott owner drinks orange juice.
+    14. The Japanese owns Trek.
+    15. The Norwegian lives next to the blue house.
+
+Now, who drinks water? Who owns the zebra?
+
+In the interest of clarity, it must be added that each of the five houses is painted a different color, and their inhabitants are of different national extractions, own different pets, drink different beverages and own different brands of bikes [sic.]. One other thing: in statement 6, right means your right.
+
+The exercise is to encode the Zebra Puzzle in an ontology, so that the answer (Now, who drinks water? Who owns the zebra?) is computed by the reasoner.
+
+Tip: The perhaps most difficult to do in this exercise is to express all the implicit information in the puzzle, e.g., that there are five houses on a row—where some houses are next to each other and some are not, that there are exactly five persons and that each person has exactly one favorite drink, and that the five drinks mentioned are the only ones considered. Remember that OWL ontologies and reasoning abides by the open world assumption and the none unique name assumption.

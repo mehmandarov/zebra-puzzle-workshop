@@ -1,0 +1,23 @@
+===========================================
+Prerequisites:
+===========================================
+
+* Completed Exercise 1.
+
+
+===========================================
+Exercise 2: "Hello, World!" with Jena 
+===========================================
+
+In this exercise we will:
+
+1. Recreate the model from Exercise 1 with Jena
+2. Print the model in RDF (TTL) and compare it with the file in Exercise 1
+3. Achievement unlocked! Jena level 1. The basics of Jena mastered you have, young Padawan.
+
+
+Hints:
+
+1. Remember triples? Subject, predicate, and object?
+2. In Jena we have resources and properties. Use them wisely. :)
+3. Use factory methods on your model.

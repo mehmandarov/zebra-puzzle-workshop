@@ -1,0 +1,109 @@
+@prefix ex: <http://example.jz14.javazone.no#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+ex:hasMainCountryLanguage rdf:type owl:ObjectProperty ;
+                          rdfs:domain ex:Country ;                          
+                          rdfs:range ex:Language .
+
+ex:hasMainLanguage rdf:type owl:ObjectProperty ;
+                   rdfs:domain ex:Settlement ;
+                   rdfs:range ex:Language ;
+                   rdfs:subPropertyOf owl:topObjectProperty .
+
+ex:isInCountry rdf:type owl:ObjectProperty ;               
+               rdfs:domain ex:Settlement ;
+               rdfs:range ex:Country .
+
+
+               
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+ex:name rdf:type owl:DatatypeProperty ;        
+        rdfs:range xsd:string .
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+ex:Settlement rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty ex:isInCountry ;
+                              owl:someValuesFrom ex:Country
+                            ] .
+
+ex:City rdf:type owl:Class ;        
+        rdfs:subClassOf ex:Settlement .
+
+ex:Country rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:oneOf ( ex:Norway
+                                             ex:Sweden
+                                             ex:Denmark
+                                           )
+                               ] .
+
+ex:Language rdf:type owl:Class ;            
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:oneOf ( ex:Norwegian
+                                              ex:English
+                                            )
+                                ] .
+
+ex:NorwegianCity rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+#TODO
+                                     ] ;
+                 rdfs:subClassOf ex:City .
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+ex:Bergen rdf:type ex:City ,
+                   owl:NamedIndividual ;          
+          ex:hasMainLanguage ex:Norwegian .
+
+
+ex:Denmark rdf:type owl:NamedIndividual .
+
+ex:English rdf:type owl:NamedIndividual .
+
+ex:Norway rdf:type owl:NamedIndividual ;          
+          ex:hasMainCountryLanguage ex:Norwegian .
+
+ex:Norwegian rdf:type owl:NamedIndividual .
+
+ex:Oslo rdf:type ex:NorwegianCity ,
+                 owl:NamedIndividual ;        
+        ex:isInCountry ex:Norway ;
+        ex:hasMainLanguage ex:Norwegian .
+
+ex:London rdf:type ex:City ,
+                 owl:NamedIndividual .
+
+ex:Veggeli rdf:type owl:NamedIndividual;
+        ex:isInCountry ex:Norway ;
+        ex:hasMainLanguage ex:Norwegian .
+
+ex:Sweden rdf:type owl:NamedIndividual .

@@ -1,0 +1,34 @@
+===========================================
+Prerequisites:
+===========================================
+
+* Completed Exercise 2.
+
+
+===========================================
+Exercise 3: Reasoning 
+===========================================
+
+In this exercise we will:
+
+1. Learn how a reasoner can infer facts from the ones we already know.
+2. Run the existing model with different reasoning level "None" (Ex.3.1 in the code).
+3. Run the existing model with different reasoning level "OWL" (Ex.3.2 in the code).
+4. Is Bergen a Norwegian city?
+   Well, we know it is. But does that pile of melted silicone under your fingertips know that?
+5. What has to be done to make the reasoner infer that Bergen is a Norwegian city without explicitly declaring that? (Ex.3.3 in the code.)
+6. Awesomesauce! Level up!
+
+
+Hints:
+
+1. For Ex.3.1 in the code, you can write the following for reasoning level "None":
+            ontModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM);
+2. For Ex.3.2 in the code (reasoning level "OWL"), you will have to use a reasoning engine, e.g. Pellet:
+            a. Create reasoner object
+            b. Create inference model: 
+                ModelFactory.createInfModel(...);
+            c. Create ontology model based on inference model and the reasoner spec 
+                (i.e. PelletReasonerFactory.THE_SPEC).
+3. For Ex.3.3 in the code, you will need to extend TTL file with more facts. 
+   You might want to give owl:intersectionOf a try.

@@ -1,0 +1,27 @@
+===========================================
+Prerequisites:
+===========================================
+
+* Maven
+* git
+* IDE of your choosing
+* Run: git clone https://bitbucket.org/computas/zebra-puzzle-workshop.git 
+
+
+===========================================
+Exercise 1: "Hello, World!" with RDF (TTL) 
+===========================================
+
+In this exercise we will:
+
+1. Read a simple "Hello, World!" statement in RDF (in Turte format) from file.
+2. Print all individuals in the model with Jena.
+3. Verify that we have only one individual that looks like this: 
+        (:Joe :hasSentMessage 'Hello World!'^^http://www.w3.org/2001/XMLSchema#string)
+4. Achievement unlocked! Your development environment is OK. Congratulations!
+
+
+Hints:
+1. Look for tests for this exercise.
+2. Begin by creating default model using ModelFactory.
+3. Check out PrintUtil class in Jena.

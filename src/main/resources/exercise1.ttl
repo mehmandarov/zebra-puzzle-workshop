@@ -1,0 +1,4 @@
+@prefix :        <http://jz14/zebra/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+:Joe  :hasSentMessage "Hello World!"^^xsd:string .

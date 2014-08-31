@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="zebra" verbose="1">
+  <test name="unit">
+    <packages>
+        <package name="no.javazone.zebra.*"/>
+        <package name="no.jz14.zebra.*"/>
+    </packages>
+  </test>
+</suite>
