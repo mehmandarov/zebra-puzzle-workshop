@@ -17,12 +17,12 @@ ex:hasMainCountryLanguage rdf:type owl:ObjectProperty ;
                           rdfs:range ex:Language .
 
 ex:hasMainLanguage rdf:type owl:ObjectProperty ;
-                   rdfs:domain ex:City ;
+                   rdfs:domain ex:Settlement ;
                    rdfs:range ex:Language ;
                    rdfs:subPropertyOf owl:topObjectProperty .
 
 ex:isInCountry rdf:type owl:ObjectProperty ;               
-               rdfs:domain ex:City ;
+               rdfs:domain ex:Settlement ;
                rdfs:range ex:Country .
 
 
@@ -36,19 +36,20 @@ ex:isInCountry rdf:type owl:ObjectProperty ;
 ex:name rdf:type owl:DatatypeProperty ;        
         rdfs:range xsd:string .
 
-
-
 #################################################################
 #
 #    Classes
 #
 #################################################################
 
-ex:City rdf:type owl:Class ;        
+ex:Settlement rdf:type owl:Class ;
         owl:equivalentClass [ rdf:type owl:Restriction ;
                               owl:onProperty ex:isInCountry ;
                               owl:someValuesFrom ex:Country
                             ] .
+
+ex:City rdf:type owl:Class ;        
+        rdfs:subClassOf ex:Settlement .
 
 ex:Country rdf:type owl:Class ;
            owl:equivalentClass [ rdf:type owl:Class ;
