@@ -21,7 +21,7 @@ In this exercise we will:
 
 
 ===========================================
-The puzzle
+The Puzzle
 ===========================================
 
 According to Albert Einstein only 2 % of us are able to solve the Zebra Puzzle.

@@ -14,7 +14,7 @@ Exercise 1: "Hello, World!" with RDF (TTL)
 
 In this exercise we will:
 
-1. Read a simple "Hello, World!" statement in RDF (in Turte format) from file.
+1. Read a simple "Hello, World!" statement in RDF (in Turtle format) from file.
 2. Print all individuals in the model with Jena.
 3. Verify that we have only one individual that looks like this: 
         (:Joe :hasSentMessage 'Hello World!'^^http://www.w3.org/2001/XMLSchema#string)
