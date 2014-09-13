@@ -25,9 +25,9 @@ import com.hp.hpl.jena.ontology.Individual;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,16 +35,17 @@ import java.util.List;
 /**
  * @author Michael Gfeller
  */
-@Test
+
 public class Exercise4Test {
 
-  private Exercise4 exercise4;
+  private static Exercise4 exercise4;
 
   @BeforeClass
-  public void setUp() throws Exception {
+  public static void setUp() throws Exception {
     exercise4 = new Exercise4();
   }
 
+  @Test
   public void testZebraHasOwner() {
     List<Individual> individuals = exercise4.getIndividuals();
     List<Individual> found = new ArrayList<Individual>();
@@ -61,6 +62,7 @@ public class Exercise4Test {
     }
   }
 
+  @Test
   public void testSomebodyDrinksWater() {
     List<Individual> individuals = exercise4.getIndividuals();
     List<Individual> found = new ArrayList<Individual>();

@@ -22,67 +22,66 @@ package no.jz14.zebra.solution;
 
 
 import com.hp.hpl.jena.ontology.Individual;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  * @author Michael Gfeller
  */
-@Test
 public class Exercise32Test {
 
-  private Exercise32 exercise32;
+  private static Exercise32 exercise32;
 
   @BeforeClass
-  public void setUp() {
+  public static void setUp() {
     exercise32 = new Exercise32();
   }
 
+  @Test
   public void testIndividualsCount() {
-    Assert.assertEquals(exercise32.getIndividualsCount(), 9);
+    Assert.assertEquals(9, exercise32.getIndividualsCount());
   }
 
+  @Test
   public void testOsloIsANorwegianCity() {
     Individual oslo = exercise32.getIndividual("Oslo");
     Assert.assertTrue(oslo.hasOntClass(Exercise3.NS + "NorwegianCity"));
   }
 
+  @Test
   public void testBergenIsNotANorwegianCity() {
     Individual bergen = exercise32.getIndividual("Bergen");
     Assert.assertFalse(bergen.hasOntClass(Exercise3.NS + "NorwegianCity"));
   }
 
+  @Test
   public void testLondonIsNotANorwegianCity() {
     Individual london = exercise32.getIndividual("London");
     Assert.assertFalse(london.hasOntClass(Exercise3.NS + "NorwegianCity"));
   }
 
+  @Test
   public void testVeggeliIsNotANorwegianCity() {
     Individual veggeli = exercise32.getIndividual("Veggeli");
     Assert.assertFalse(veggeli.hasOntClass(Exercise3.NS + "NorwegianCity"));
   }
 
-  @Test(dataProvider = "individuals")
-  public void testExpectedIndividual(String localname) {
-    Individual individual = exercise32.getIndividual(localname);
-    Assert.assertNotNull(individual);
-    Assert.assertEquals(individual.getLocalName(), localname);
+  @Test
+  public void testIndividuals() {
+    Assert.assertTrue(assertIndividual("Norwegian"));
+    Assert.assertTrue(assertIndividual("Bergen"));
+    Assert.assertTrue(assertIndividual("Denmark"));
+    Assert.assertTrue(assertIndividual("English"));
+    Assert.assertTrue(assertIndividual("Oslo"));
+    Assert.assertTrue(assertIndividual("London"));
+    Assert.assertTrue(assertIndividual("Veggeli"));
+    Assert.assertTrue(assertIndividual("Norway"));
+    Assert.assertTrue(assertIndividual("Sweden"));
   }
 
-  @DataProvider(name = "individuals")
-  public Object[][] createData() {
-    return new Object[][]{
-            {"Norwegian"},
-            {"Bergen"},
-            {"Denmark"},
-            {"English"},
-            {"Oslo"},
-            {"London"},
-            {"Veggeli"},
-            {"Norway"},
-            {"Sweden"},
-    };
+  private boolean assertIndividual(String localname) {
+    Individual individual = exercise32.getIndividual(localname);
+    return individual != null && localname.equals(individual.getLocalName());
   }
 }

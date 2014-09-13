@@ -22,28 +22,30 @@ package no.jz14.zebra.exercises;
 
 
 import com.hp.hpl.jena.rdf.model.Model;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * @author Michael Gfeller
  */
-@Test
 public class Exercise1Test {
 
+  @Test
   public void testModelIsNotNull() {
     Exercise1 exercise1 = new Exercise1();
     Model model = exercise1.getModel();
     Assert.assertNotNull(model);
   }
 
+  @Test
   public void testIndividualsCountIs1() {
     Exercise1 exercise1 = new Exercise1();
-    Assert.assertEquals(exercise1.getIndividualsCount(), 1);
+    Assert.assertEquals(1, exercise1.getIndividualsCount());
   }
 
+  @Test
   public void testIndividual() {
     Exercise1 exercise1 = new Exercise1();
-    Assert.assertEquals(exercise1.getIndividual(), "(:Joe :hasSentMessage 'Hello World!'^^http://www.w3.org/2001/XMLSchema#string)");
+    Assert.assertEquals("(:Joe :hasSentMessage 'Hello World!'^^http://www.w3.org/2001/XMLSchema#string)", exercise1.getIndividual());
   }
 }

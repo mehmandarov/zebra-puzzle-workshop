@@ -23,22 +23,22 @@ package no.jz14.zebra.exercises;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.io.IOException;
 
 /**
  * @author Michael Gfeller
  */
-@Test
 public class Exercise2Test {
 
+  @Test
   public void testTtlIsSameAsExercise1() throws IOException {
     Exercise2 exercise2 = new Exercise2();
 
     String expected = StringUtils.trim(IOUtils.toString(getClass().getResource("/exercise1.ttl")));
     String actual = StringUtils.trim(exercise2.getModelAsTtl());
-    Assert.assertEquals(actual,expected);
+    Assert.assertEquals(expected, actual);
   }
 }

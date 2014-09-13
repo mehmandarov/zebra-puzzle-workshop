@@ -25,55 +25,61 @@ import com.hp.hpl.jena.ontology.Individual;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  * @author Michael Gfeller
  */
-@Test
 public class Exercise31Test {
 
-  private Exercise31 exercise31;
+  private static Exercise31 exercise31;
 
   @BeforeClass
-  public void setUp() throws Exception {
+  public static void setUp() throws Exception {
     exercise31 = new Exercise31();
   }
 
+  @Test
   public void testIndividualsCount() {
-    Assert.assertEquals(exercise31.getIndividualsCount(), 3);
+    Assert.assertEquals(3, exercise31.getIndividualsCount());
   }
 
+  @Test
   public void testHasBergen() {
     Individual bergen = exercise31.getIndividual("Bergen");
     Assert.assertNotNull(bergen);
-    Assert.assertEquals(bergen.getLocalName(), "Bergen");
+    Assert.assertEquals("Bergen", bergen.getLocalName());
   }
 
+  @Test
   public void testHasOslo() {
     Individual oslo = exercise31.getIndividual("Oslo");
     Assert.assertNotNull(oslo);
-    Assert.assertEquals(oslo.getLocalName(), "Oslo");
+    Assert.assertEquals("Oslo", oslo.getLocalName());
   }
 
+  @Test
   public void testHasLondon() {
     Individual london = exercise31.getIndividual("London");
     Assert.assertNotNull(london);
-    Assert.assertEquals(london.getLocalName(), "London");
+    Assert.assertEquals("London", london.getLocalName());
   }
 
+  @Test
   public void testHasNotNorway() {
     Individual norway = exercise31.getIndividual("Norway");
     Assert.assertNull(norway);
   }
 
+  @Test
   public void testHasNotNorwegian() {
     Individual norwegian = exercise31.getIndividual("Norwegian");
     Assert.assertNull(norwegian);
   }
 
+  @Test
   public void testOsloHasMainLanguageNorwegian() {
     Individual oslo = exercise31.getIndividual("Oslo");
     Property mainLanguage = ResourceFactory.createProperty(Exercise3.NS, "hasMainLanguage");
@@ -81,16 +87,19 @@ public class Exercise31Test {
     Assert.assertTrue(oslo.hasProperty(mainLanguage, norwegian));
   }
 
+  @Test
   public void testOsloIsANorwegianCity() {
     Individual oslo = exercise31.getIndividual("Oslo");
     Assert.assertTrue(oslo.hasOntClass(Exercise3.NS + "NorwegianCity"));
   }
 
+  @Test
   public void testBergenIsNotANorwegianCity() {
     Individual bergen = exercise31.getIndividual("Bergen");
     Assert.assertFalse(bergen.hasOntClass(Exercise3.NS + "NorwegianCity"));
   }
 
+  @Test
   public void testLondonIsNotANorwegianCity() {
     Individual london = exercise31.getIndividual("London");
     Assert.assertFalse(london.hasOntClass(Exercise3.NS + "NorwegianCity"));
