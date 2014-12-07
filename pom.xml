@@ -15,13 +15,13 @@
   mvn install -DupdateLicense
 
   -->
-  <groupId>no.javazone</groupId>
+  <groupId>no.computas</groupId>
   <artifactId>zebra</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Zebra</name>
   <inceptionYear>2014</inceptionYear>
-  <description>Workshop at JavaZone 2014: Semantic Wizardry, Logic [Zebra] Puzzles, and Java</description>
+  <description>Workshop: Semantic Wizardry, Logic [Zebra] Puzzles, and Java</description>
   <organization>
     <name>Computas AS</name>
     <url>www.computas.com</url>
