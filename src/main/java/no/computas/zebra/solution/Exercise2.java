@@ -36,7 +36,7 @@ public class Exercise2 {
 
   private Model createModel() {
     Model model = ModelFactory.createDefaultModel();
-    String NS = "http://jz14/zebra/";
+    String NS = "http://www.computas.no/zebra/";
     model.setNsPrefix("", NS);
     model.setNsPrefix("xsd", "http://www.w3.org/2001/XMLSchema#");
     Resource subject = model.createResource(NS + "Joe");

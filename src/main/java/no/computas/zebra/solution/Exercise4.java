@@ -32,7 +32,7 @@ import org.mindswap.pellet.jena.PelletReasonerFactory;
  */
 public class Exercise4 extends Exercise {
 
-  public static String NS = "http://jz14/zebra#";
+  public static String NS = "http://www.computas.no/zebra#";
 
   private final OntModel ontModel;
   private final String modelBase = "exercise4-zebra-solution.ttl";

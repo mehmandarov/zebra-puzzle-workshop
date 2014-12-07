@@ -57,7 +57,7 @@ public class Exercise1 {
 
   public String getIndividual() {
     Statement statement = model.listStatements().nextStatement();
-    PrintUtil.registerPrefix("", "http://jz14/zebra/");
+    PrintUtil.registerPrefix("", "http://www.computas.no/zebra/");
     return PrintUtil.print(statement);
   }
 }

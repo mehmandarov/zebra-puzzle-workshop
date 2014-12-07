@@ -27,6 +27,6 @@ public class Exercise3 extends Exercise {
   protected static final String MODEL_INPUT_EX31_EX32 = "exercise3.ttl";
   protected static final String MODEL_INPUT_EX33 = "exercise3-3-solution.ttl";
   protected static final String MODEL_INPUT_EX33_JENA = "exercise3-3-jena.ttl";
-  protected static final String NS = "http://example.jz14.javazone.no#";
+  protected static final String NS = "http://www.computas.no/example#";
 
 }
