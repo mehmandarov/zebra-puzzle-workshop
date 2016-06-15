@@ -5,7 +5,7 @@ Prerequisites:
 * Maven
 * git
 * IDE of your choosing
-* Run: git clone https://bitbucket.org/computas/zebra-puzzle-workshop.git 
+* Run: git clone https://github.com/mehmandarov/zebra-puzzle-workshop.git 
 
 
 ===========================================
