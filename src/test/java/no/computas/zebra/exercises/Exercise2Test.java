@@ -37,7 +37,7 @@ public class Exercise2Test {
   public void testTtlIsSameAsExercise1() throws IOException {
     Exercise2 exercise2 = new Exercise2();
 
-    String expected = StringUtils.trim(IOUtils.toString(getClass().getResource("/exercise1.ttl")));
+    String expected = StringUtils.trim(IOUtils.toString(getClass().getResource("/exercise1.ttl"), "UTF-8"));
     String actual = StringUtils.trim(exercise2.getModelAsTtl());
     Assert.assertEquals(expected, actual);
   }
