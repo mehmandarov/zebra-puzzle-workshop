@@ -4,7 +4,7 @@ More information: http://mehmandarov.com/reasoning-and-semantic-wizardry/
 
 ## Getting started
 * Clone the code
-* Import into your IDE
+* Import the code into your IDE
 * Build with Apache Maven: ```mvn clean install -DskipTests```
 
 ## Exercises
