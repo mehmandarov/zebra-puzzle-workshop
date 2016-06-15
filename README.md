@@ -6,6 +6,11 @@ More information: http://mehmandarov.com/reasoning-and-semantic-wizardry/
 * Clone the code
 * Import into your IDE
 * Build with Apache Maven: ```mvn clean install -DskipTests```
+* Exercises can be found in ```exercises/``` folder.
+* The code for exercises can be found in ```src/test/java/no/computas/zebra/exercises``` folder. 
+* They are implemented as tests and they will initially fail.
+* Your job is to fix the code, and make them pass. Good luck!
+
 
 ## Requirements
 * Java 7, or later
