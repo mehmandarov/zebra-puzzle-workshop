@@ -15,7 +15,7 @@ More information: http://mehmandarov.com/reasoning-and-semantic-wizardry/
 * Your job is to fix the code, and make the tests pass. Good luck!
 * _Caution: Spoilers beyond this point!_ Stuck? You can find solutions for each exercise here:
   * ```zebra-puzzle-workshop/src/main/java/no/computas/zebra/solution```, and
-  * ```zebra-puzzle-workshop/src/main/resources/*-solution.ttln```
+  * ```zebra-puzzle-workshop/src/main/resources/*-solution.ttl```
 
 _p.s. Want to read more about Zebra Puzzles? [Go ahead][2], but beware of some potential spoilers!_
 
