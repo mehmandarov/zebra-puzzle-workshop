@@ -75,15 +75,17 @@ public class Exercise {
 
   protected static String printIndividual(Individual individual) {
     StringBuilder stringBuilder = new StringBuilder();
-    stringBuilder.append("Individual: " + individual.getLocalName() + "\n");
-    StmtIterator properties = individual.listProperties();
-    while (properties.hasNext()) {
-      Statement s = properties.next();
-      stringBuilder.append("  " + s.getPredicate().getLocalName() + " : " + s.getObject().toString() + "\n");
-    }
-    properties.close();
-    stringBuilder.append("\n");
-    stringBuilder.append(StringUtils.repeat("-", 70));
+	  if (individual.getLocalName()!=null) {
+      stringBuilder.append("Individual: " + individual.getLocalName() + "\n");
+      StmtIterator properties = individual.listProperties();
+      while (properties.hasNext()) {
+        Statement s = properties.next();
+        stringBuilder.append("  " + s.getPredicate().getLocalName() + " : " + s.getObject().toString() + "\n");
+      }
+      properties.close();
+      stringBuilder.append("\n");
+      stringBuilder.append(StringUtils.repeat("-", 70));
+	  }
     return stringBuilder.toString();
   }
 }
