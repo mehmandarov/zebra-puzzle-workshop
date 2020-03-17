@@ -5,7 +5,7 @@ More information: http://mehmandarov.com/reasoning-and-semantic-wizardry/
 ## Getting started
 * Clone this repo
 * Import the code into your IDE
-* Build with Apache Maven, skip tests for now: ```mvn clean install -DskipTests```
+* Build with Apache Maven, skip tests for now: ```mvn clean verify -DskipTests```
 
 ## Exercises
 * The exercises can be found in ```exercises/``` folder.
