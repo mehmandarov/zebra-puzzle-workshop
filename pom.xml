@@ -59,7 +59,7 @@
     <ver.xerces>2.10.0</ver.xerces>
     <jena-tdb.version>0.10.0</jena-tdb.version>
     <junit.version>4.13.1</junit.version>
-    <maven-surefire-report-plugin.version>2.19.1</maven-surefire-report-plugin.version>
+    <maven-surefire-report-plugin.version>3.5.6</maven-surefire-report-plugin.version>
   </properties>
 
   <dependencies>
