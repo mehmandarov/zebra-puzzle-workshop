@@ -51,7 +51,7 @@
     <log4j.version>2.25.4</log4j.version>
     <commons-lang.version>3.20.0</commons-lang.version>
 
-    <license-maven-plugin.version>1.9</license-maven-plugin.version>
+    <license-maven-plugin.version>2.7.1</license-maven-plugin.version>
     <license.licenseName>zebra_license</license.licenseName>
     <license.licenseResolver>${project.baseUri}/src/license</license.licenseResolver>
     <pellet.version>2.3.6-ansell</pellet.version>
